@@ -42,3 +42,5 @@ Subset used: [FILL IN once bag is created — frame range + rationale]
 | `git@github.com: Permission denied (publickey)` cloning dependency repos | Manifest uses SSH URLs; no GitHub-registered key on the pod | `git config --global url."https://github.com/".insteadOf "git@github.com:"` |
 | `rosdep` "not yet been initialized" | One-time-per-machine init step missed | `sudo rosdep init && rosdep update` |
 | "Your Pod's GPUs are no longer available" | Shared GPU reclaimed while pod was stopped | Used RunPod's automatic data migration to a new pod |
+
+_Last updated: Wed Aug  5 15:15:54 UTC 2026_
