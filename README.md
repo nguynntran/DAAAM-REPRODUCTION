@@ -1,46 +1,80 @@
-# DAAAM Reproduction
+# DAAAM Reproduction — Test Assignment
 
-Reproducing the DAAAM pipeline on a CODa dataset subset, following the ROS 2 workflow
-from MIT-SPARK/DAAAM and MIT-SPARK/DAAAM-ROS.
+Reproducing the DAAAM (Describe Anything, Anywhere, at Any Moment) pipeline on a
+motion-verified subset of the CODa dataset, via the official ROS 2 Jazzy + DAAAM-ROS workflow.
 
-**Full report (Google Doc):** [FILL IN LINK]
+**Full report (Google Doc):** [FILL IN link]
 
 ## Environment
-- RunPod, `runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404` (Ubuntu 24.04, CUDA 12.8.1, PyTorch 2.8.0)
-- NVIDIA RTX 4090, 24GB VRAM
-- ROS 2 Jazzy
 
-## Pinned commit SHAs
-[PASTE OUTPUT FROM THE LOOP ABOVE]
+| Component | Value |
+|---|---|
+| Provider | RunPod, RTX 4090 (24GB VRAM) |
+| OS | Ubuntu 24.04 |
+| CUDA / PyTorch | 12.8.1 / 2.8.0 |
+| ROS 2 | Jazzy |
+| DAAAM commit | `[FILL IN]` |
+| DAAAM-ROS commit | `[FILL IN]` |
+| Hydra / Spark-DSG commit | `[FILL IN]` |
+| FoundationStereo fork | [nicogorlo/FoundationStereo](https://github.com/nicogorlo/FoundationStereo), commit `[FILL IN]` |
+
+Full dependency list: `requirements-frozen.txt`, `environment-coda.yml`.
 
 ## Setup
+
 ```bash
-# ROS 2 Jazzy
-sudo apt install -y ros-jazzy-ros-base ros-dev-tools
+# 1. After every fresh pod boot — reinstalls ROS 2/rosdep/colcon/conda-init/git-config,
+#    all of which live on the ephemeral container disk, not the persistent volume
+bash scripts/post_boot_setup.sh
 
-# rosdep (required once per fresh container)
-sudo rosdep init && rosdep update
-
-# DAAAM workspace
-mkdir -p /workspace/ros2_ws/src && cd /workspace/ros2_ws/src
-git clone https://github.com/MIT-SPARK/DAAAM.git daaam
-git config --global url."https://github.com/".insteadOf "git@github.com:"
-bash daaam/install/install.sh
+# 2. Build the DAAAM ROS 2 workspace (see main repo's install.sh)
+# 3. Apply the open3d patch before running FoundationStereo
+python scripts/patch_open3d_ml_import.py
 ```
 
-## Dataset
-CODa sequence 0, via [ut-amrl/coda-devkit](https://github.com/ut-amrl/coda-devkit).
-Subset used: [FILL IN once bag is created — frame range + rationale]
+## Data
 
-## Smoke test / full run
-[FILL IN once launch commands are finalized]
+CODa sequence 0, frames **2000–2399** (400 frames, ~40s at 10Hz). Range chosen after
+inspecting the pose trajectory — this window shows sustained, consistent motion
+(~9m/100 frames), avoiding a near-stationary segment later in the sequence. Full
+rationale and evidence in the report, section 4.
+
+```bash
+scripts/prepare_coda_subset.sh   # extracts the above range from a full CODa download
+```
+
+## Running
+
+**Depth estimation:**
+```bash
+cd FoundationStereo
+python scripts/run_coda_depth_estimation.py \
+  --dataset_folder /workspace/CODa_subset \
+  --sequence_id 0 \
+  --ckpt_dir ./pretrained_models/23-51-11/model_best_bp2.pth \
+  --save_format png
+```
+
+**Bag creation + run:** `[FILL IN once finalized]`
+
+**Smoke test** (short range, fast iteration): `[FILL IN]`
+**Full run:** `[FILL IN]`
 
 ## Troubleshooting
-| Error | Cause | Fix |
-|---|---|---|
-| `Permission denied (publickey)` on SSH login | Key saved to `~/` instead of `~/.ssh/` | Moved key, `chmod 600` |
-| `git@github.com: Permission denied (publickey)` cloning dependency repos | Manifest uses SSH URLs; no GitHub-registered key on the pod | `git config --global url."https://github.com/".insteadOf "git@github.com:"` |
-| `rosdep` "not yet been initialized" | One-time-per-machine init step missed | `sudo rosdep init && rosdep update` |
-| "Your Pod's GPUs are no longer available" | Shared GPU reclaimed while pod was stopped | Used RunPod's automatic data migration to a new pod |
 
-_Last updated: Wed Aug  5 15:15:54 UTC 2026_
+Full details with root-cause analysis in the report (section 8). Highlights:
+- ROS 2 apt repo, `rosdep`, and `colcon` all live on the pod's ephemeral container
+  disk and must be reinstalled after every restart — see `scripts/post_boot_setup.sh`.
+- `spark_dsg` and `daaam_ros` both required re-cloning due to incomplete initial clones.
+- `open3d` unconditionally imports an unrelated ML-benchmark submodule at load time —
+  patched via `scripts/patch_open3d_ml_import.py`.
+- FoundationStereo's `requirements.txt` is missing several transitive dependencies
+  (`tqdm`, `natsort`, `pandas`, `open3d`'s own extras); installed as surfaced.
+
+## Repository contents
+
+- `scripts/prepare_coda_subset.sh` — CODa subset extraction
+- `scripts/patch_open3d_ml_import.py` — open3d import fix
+- `scripts/post_boot_setup.sh` — pod environment reinit
+- `logs/` — full install/setup logs
+- `requirements-frozen.txt`, `environment-coda.yml` — dependency lock files
