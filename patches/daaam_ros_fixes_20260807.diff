@@ -1,0 +1,39 @@
+diff --git a/config/hydra_config/coda_dataset_khronos.yaml b/config/hydra_config/coda_dataset_khronos.yaml
+index b4e8742..366a993 100644
+--- a/config/hydra_config/coda_dataset_khronos.yaml
++++ b/config/hydra_config/coda_dataset_khronos.yaml
+@@ -6,7 +6,7 @@ map_window:
+   max_radius_m: 20.0
+ active_window:
+   #type: ReconstructionModule
+-  type: ActiveWindow
++  type: ReconstructionModule
+   volumetric_map:
+     with_semantics: true
+     voxels_per_side: 16
+diff --git a/launch/coda_daaam_hydra.launch.yaml b/launch/coda_daaam_hydra.launch.yaml
+index 87d8c21..8ba53cc 100644
+--- a/launch/coda_daaam_hydra.launch.yaml
++++ b/launch/coda_daaam_hydra.launch.yaml
+@@ -131,7 +131,7 @@ launch:
+ 
+         # Tracking
+         - {name: reid_weights, value: 'checkpoints/reid_weights/clip_general.engine'}
+-        - {name: with_reid, value: 'true'}
++        - {name: with_reid, value: 'false'}
+         - {name: reid_half, value: 'false'}  # CLIP models require FP32
+ 
+         # Output
+diff --git a/src/daaam_ros/nodes/daaam_node.py b/src/daaam_ros/nodes/daaam_node.py
+index 021a4b1..3e501a8 100755
+--- a/src/daaam_ros/nodes/daaam_node.py
++++ b/src/daaam_ros/nodes/daaam_node.py
+@@ -153,7 +153,7 @@ class DaaamNode(Node):
+ 
+ 		# tracking parameters
+ 		self.declare_parameter("reid_weights", "checkpoints/reid_weights/clip_general.engine")
+-		self.declare_parameter("with_reid", True)
++		self.declare_parameter("with_reid", False)
+ 		self.declare_parameter("reid_half", False)  # FP16 for ReID (False for CLIP models)
+ 
+ 		# debug and output
