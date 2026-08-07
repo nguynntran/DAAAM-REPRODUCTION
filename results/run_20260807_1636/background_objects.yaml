@@ -1,0 +1,67 @@
+objects:
+- centroid_pixel:
+  - 7
+  - 121
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884387.7116
+  has_clip_feature: false
+  has_embedding: false
+  in_hydra: false
+  label: unknown
+  last_observed: 1673884387.7116
+  median_depth: 11.020000457763672
+  observations: 1
+  position_camera:
+  - -8.678209860551844
+  - -4.249831750596488
+  - 12.534117642570944
+  position_world:
+  - -61.631786642331825
+  - 122.20559698519251
+  - 0.08931070748709237
+  semantic_id: 23
+- centroid_pixel:
+  - 625
+  - 163
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884394.013281
+  has_clip_feature: false
+  has_embedding: false
+  in_hydra: false
+  label: unknown
+  last_observed: 1673884394.013281
+  median_depth: 19.81999969482422
+  observations: 1
+  position_camera:
+  - 14.077386033439872
+  - -4.419695712889666
+  - 19.356227354569867
+  position_world:
+  - -39.37018039665492
+  - 125.95802997979567
+  - 0.062309533029301006
+  semantic_id: 35
+- centroid_pixel:
+  - 4
+  - 184
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884400.41367
+  has_clip_feature: false
+  has_embedding: false
+  in_hydra: false
+  label: unknown
+  last_observed: 1673884400.41367
+  median_depth: 11.191499710083008
+  observations: 1
+  position_camera:
+  - -9.361575020172115
+  - -4.331686227878208
+  - 14.970630054473878
+  position_world:
+  - -60.90021268766887
+  - 130.30498644831505
+  - -0.08469678593939975
+  semantic_id: 48
+total_background_objects: 3
+total_filtered: 3
+total_in_hydra: 0
