@@ -1,0 +1,22 @@
+image_file: grounding_1673884390.112554_000002.jpg
+timestamp: 1673884390.112554
+frame_counter: 10
+num_masks: 3
+annotations:
+- semantic_id: 29
+  description: A long, narrow, and straight concrete sidewalk with a smooth surface,
+    running parallel to a brick-paved area.
+  is_full_image: false
+- semantic_id: 28
+  description: A dense, elongated bush with a slightly irregular shape, featuring
+    a mix of dark green and lighter green foliage. The bush has a somewhat uneven
+    top edge and appears to be well-maintained, with no visible flowers or fruits.
+  is_full_image: false
+- semantic_id: -1
+  description: The sidewalk is composed of interlocking rectangular bricks arranged
+    in a herringbone pattern. The bricks are a mix of light and dark shades, creating
+    a textured and visually appealing surface. The sidewalk is wide and extends into
+    the distance, with a slight curve visible towards the upper right corner. There
+    are two circular manhole covers embedded within the sidewalk, one near the center
+    and another towards the right side.
+  is_full_image: true

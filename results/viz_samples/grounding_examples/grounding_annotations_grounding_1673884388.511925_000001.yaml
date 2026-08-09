@@ -1,0 +1,20 @@
+image_file: grounding_1673884388.511925_000001.jpg
+timestamp: 1673884388.511925
+frame_counter: 10
+num_masks: 3
+annotations:
+- semantic_id: 8
+  description: A patch of terrain covered with dense, green grass interspersed with
+    small, scattered brown leaves.
+  is_full_image: false
+- semantic_id: 25
+  description: The street light features a cylindrical, frosted glass lamp housing
+    with a slightly tapered top. The housing is mounted on a dark, ornate metal pole
+    with intricate detailing.
+  is_full_image: false
+- semantic_id: -1
+  description: The sidewalk is composed of interlocking rectangular bricks arranged
+    in a herringbone pattern. The bricks are uniformly colored in a light brown hue,
+    with some scattered dry leaves on the surface. The sidewalk is bordered by a narrow
+    strip of grass on the right side.
+  is_full_image: true

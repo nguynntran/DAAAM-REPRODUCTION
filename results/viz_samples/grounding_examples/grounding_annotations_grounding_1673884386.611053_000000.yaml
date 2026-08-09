@@ -1,0 +1,38 @@
+image_file: grounding_1673884386.611053_000000.jpg
+timestamp: 1673884386.611053
+frame_counter: 10
+num_masks: 6
+annotations:
+- semantic_id: 5
+  description: A vertical banner with a white background featuring a central image
+    of a person in a red outfit, holding a microphone. Above the image, bold black
+    text reads "THE" followed by smaller black text "LIVE" and "SHOW". Below the image,
+    there is a red rectangular section with white text.
+  is_full_image: false
+- semantic_id: 11
+  description: The sidewalk consists of rectangular, light brown bricks arranged in
+    a linear pattern. The bricks are uniformly aligned, creating a smooth and even
+    surface. The edge of the sidewalk is bordered by a darker, textured strip that
+    runs parallel to the bricks.
+  is_full_image: false
+- semantic_id: 15
+  description: A rectangular, dark brown brick wall with a rough texture and slightly
+    uneven top edge.
+  is_full_image: false
+- semantic_id: 17
+  description: A vertical rectangular street sign with a white background and black
+    border. The sign features black text at the top reading "ONE WAY" in all capital
+    letters. Below the text, there is a black arrow pointing to the right.
+  is_full_image: false
+- semantic_id: 18
+  description: A tall, slender street light with a dark, cylindrical pole that tapers
+    slightly towards the top. The pole supports a single, large, rounded light fixture
+    with a slightly domed top.
+  is_full_image: false
+- semantic_id: -1
+  description: The sidewalk is composed of interlocking rectangular bricks arranged
+    in a herringbone pattern. The bricks are uniformly colored in shades of brown
+    and tan, creating a consistent and cohesive appearance. The sidewalk is wide and
+    extends into the distance, with a slight curve visible towards the upper right
+    corner. The surface is smooth and even, with no visible cracks or damage.
+  is_full_image: true
