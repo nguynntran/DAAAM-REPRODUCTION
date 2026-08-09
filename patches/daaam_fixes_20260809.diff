@@ -1,0 +1,65 @@
+diff --git a/config/pipeline_config.yaml b/config/pipeline_config.yaml
+index c77e6ac..a09b98b 100644
+--- a/config/pipeline_config.yaml
++++ b/config/pipeline_config.yaml
+@@ -12,8 +12,8 @@ tracking:
+   device: "cuda"
+   track_buffer: 30  # Frames to keep track alive after last detection
+   enable_temporal_history: true  # Enable temporal observation history tracking
+-  reid_weights: "checkpoints/reid_weights/clip_general.engine"  # ReID model: clip_general.engine for general objects, osnet_x0_25_msmt17.pt for persons
+-  with_reid: true  # Enable ReID features for track association
++  reid_weights: "checkpoints/reid_weights/osnet_x0_25_msmt17.pt"  # ReID model: clip_general.engine for general objects, osnet_x0_25_msmt17.pt for persons
++  with_reid: false  # Enable ReID features for track association
+   reid_half: false  # Use FP16 for ReID inference (CLIP models require FP32, set to true for osnet)
+ 
+ grounding:
+diff --git a/config/pipeline_config_coda.yaml b/config/pipeline_config_coda.yaml
+index 9309bbf..579ac51 100644
+--- a/config/pipeline_config_coda.yaml
++++ b/config/pipeline_config_coda.yaml
+@@ -14,7 +14,7 @@ tracking:
+   track_buffer: 30
+   enable_temporal_history: true
+   reid_weights: "checkpoints/reid_weights/clip_general.engine"
+-  with_reid: true
++  with_reid: false
+   reid_half: false
+ 
+ grounding:
+diff --git a/install/install.sh b/install/install.sh
+index 121270c..06fe0ee 100755
+--- a/install/install.sh
++++ b/install/install.sh
+@@ -58,7 +58,7 @@ YAML
+ 	echo "  wrote $COLCON_DEFAULTS"
+ fi
+ cd "$WS_ROOT"
+-colcon build --continue-on-error
++colcon build --continue-on-error --packages-skip semantic_inference semantic_inference_ros
+ 
+ # --- 5. Python package ---
+ echo "--- [5/5] pip install ---"
+diff --git a/requirements.txt b/requirements.txt
+index d18231b..30a6be0 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -28,7 +28,6 @@ zmq
+ ultralytics
+ segment_anything
+ rclpy
+-sam2
+ open_clip_torch
+ numba
+ onnxscript
+diff --git a/src/daaam/tracking/services.py b/src/daaam/tracking/services.py
+index 22cec6a..e6e0994 100644
+--- a/src/daaam/tracking/services.py
++++ b/src/daaam/tracking/services.py
+@@ -1,6 +1,6 @@
+ from typing import Optional, Dict, Any
+ import numpy as np
+-from boxmot import BotSort
++from boxmot.trackers.botsort.botsort import BotSort
+ from pathlib import Path
+ 
+ from daaam.tracking.interfaces import TrackerInterface
