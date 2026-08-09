@@ -1,0 +1,5 @@
+Model: sentence-transformers/all-MiniLM-L6-v2
+Descriptions embedded: 46
+Embedding dimensionality: 384
+PCA 2D explained variance: 0.2886
+Unique tracked objects: 46
