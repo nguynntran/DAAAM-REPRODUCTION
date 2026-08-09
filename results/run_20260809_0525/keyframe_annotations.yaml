@@ -1,0 +1,94 @@
+keyframe_annotations:
+  1786247336.7282755:
+    confidence: 0.0
+    semantic_label: The sidewalk is composed of interlocking rectangular bricks arranged
+      in a herringbone pattern. The bricks are uniformly colored in shades of brown
+      and tan, creating a consistent and cohesive appearance. The sidewalk is wide
+      and extends into the distance, with a slight curve visible towards the upper
+      right corner. The surface is smooth and even, with no visible cracks or damage.
+    timestamp: 1786247336.7282755
+    transform: null
+  1786247336.7412937:
+    confidence: 0.0
+    semantic_label: The sidewalk is composed of interlocking rectangular bricks arranged
+      in a herringbone pattern. The bricks are uniformly colored in a light brown
+      hue, with some scattered dry leaves on the surface. The sidewalk is bordered
+      by a narrow strip of grass on the right side.
+    timestamp: 1786247336.7412937
+    transform: null
+  1786247336.7539742:
+    confidence: 0.0
+    semantic_label: The sidewalk is composed of interlocking rectangular bricks arranged
+      in a herringbone pattern. The bricks are a mix of light and dark shades, creating
+      a textured and visually appealing surface. The sidewalk is wide and extends
+      into the distance, with a slight curve visible towards the upper right corner.
+      There are two circular manhole covers embedded within the sidewalk, one near
+      the center and another towards the right side.
+    timestamp: 1786247336.7539742
+    transform: null
+  1786247336.771826:
+    confidence: 0.0
+    semantic_label: The sidewalk is composed of interlocking rectangular bricks arranged
+      in a herringbone pattern. The bricks are a mix of light and dark shades, creating
+      a textured appearance. There are two circular manhole covers embedded in the
+      sidewalk, one near the center and another towards the right side. The sidewalk
+      is bordered by a narrow strip of grass on the right side.
+    timestamp: 1786247336.771826
+    transform: null
+  1786247336.787373:
+    confidence: 0.0
+    semantic_label: A man wearing a red t-shirt and dark pants is walking down a brick-paved
+      sidewalk.
+    timestamp: 1786247336.787373
+    transform: null
+  1786247336.7981532:
+    confidence: 0.0
+    semantic_label: The sidewalk is composed of interlocking rectangular bricks arranged
+      in a herringbone pattern. The bricks are uniformly colored in a light brown
+      hue. The sidewalk is bordered by a narrow strip of grass on the right side,
+      which is well-maintained and lush green. The sidewalk extends straight ahead,
+      with a slight curve visible in the distance.
+    timestamp: 1786247336.7981532
+    transform: null
+  1786247336.8192575:
+    confidence: 0.0
+    semantic_label: The sidewalk is composed of interlocking rectangular bricks arranged
+      in a herringbone pattern. The bricks are uniformly colored in a light brown
+      hue, creating a consistent and orderly appearance. The sidewalk extends into
+      the distance, maintaining the same pattern and color throughout.
+    timestamp: 1786247336.8192575
+    transform: null
+  1786247336.8329217:
+    confidence: 0.0
+    semantic_label: The sidewalk is composed of interlocking rectangular bricks arranged
+      in a herringbone pattern. The bricks are uniformly colored in shades of brown
+      and beige, creating a consistent and orderly appearance. The sidewalk is wide
+      and extends into the distance, with a slight curve visible towards the far end.
+      The surface is smooth and even, with no visible cracks or damage.
+    timestamp: 1786247336.8329217
+    transform: null
+  1786247336.8442485:
+    confidence: 0.0
+    semantic_label: The sidewalk is composed of interlocking rectangular bricks arranged
+      in a herringbone pattern. The bricks are uniformly colored in shades of beige
+      and light brown. The sidewalk is wide and extends into the distance, with a
+      slight curve visible towards the far end. The surface is smooth and even, with
+      no visible cracks or damage.
+    timestamp: 1786247336.8442485
+    transform: null
+  1786247336.8619914:
+    confidence: 0.0
+    semantic_label: The sidewalk is composed of interlocking rectangular bricks arranged
+      in a herringbone pattern. The bricks are light brown in color and create a visually
+      appealing, textured surface. The sidewalk extends into the distance, maintaining
+      a consistent width and pattern throughout.
+    timestamp: 1786247336.8619914
+    transform: null
+  1786247336.8787284:
+    confidence: 0.0
+    semantic_label: The sidewalk is composed of interlocking rectangular bricks arranged
+      in a herringbone pattern. The bricks are light brown in color, creating a uniform
+      and consistent surface. The sidewalk extends into the distance, maintaining
+      the same pattern and color throughout.
+    timestamp: 1786247336.8787284
+    transform: null

@@ -1,0 +1,790 @@
+objects:
+- centroid_pixel:
+  - 550
+  - 6
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884385.610612
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A vertical banner with a white background featuring a central image of a
+    person in a red outfit, holding a microphone. Above the image, bold black text
+    reads "THE" followed by smaller black text "LIVE" and "SHOW". Below the image,
+    there is a red rectangular section with white text.
+  last_observed: 1673884394.11329
+  median_depth: 4.749000072479248
+  observations: 86
+  position_camera:
+  - 3.9073764666372406
+  - -3.979048955495785
+  - 8.235627933990123
+  position_world:
+  - -50.06562783619069
+  - 108.8951758835577
+  - 0.7342604789000036
+  semantic_id: 5
+- centroid_pixel:
+  - 17
+  - 298
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884385.610612
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: The sidewalk consists of rectangular, light brown bricks arranged in a linear
+    pattern. The bricks are uniformly aligned, creating a smooth and even surface.
+    The edge of the sidewalk is bordered by a darker, textured strip that runs parallel
+    to the bricks.
+  last_observed: 1673884406.013833
+  median_depth: 2.828000068664551
+  observations: 205
+  position_camera:
+  - -3.0792313535088303
+  - 0.05068771809610646
+  - 4.888726828737957
+  position_world:
+  - -56.399548935786434
+  - 110.70854078662404
+  - -2.9495913789037385
+  semantic_id: 11
+- centroid_pixel:
+  - 632
+  - 198
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884386.210901
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A rectangular, dark brown brick wall with a rough texture and slightly uneven
+    top edge.
+  last_observed: 1673884388.311868
+  median_depth: 7.5264997482299805
+  observations: 22
+  position_camera:
+  - 5.986346139094221
+  - -1.0195897426892377
+  - 7.805000001733953
+  position_world:
+  - -48.037856099210146
+  - 105.80046498696056
+  - -2.031015328822519
+  semantic_id: 15
+- centroid_pixel:
+  - 7
+  - 91
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884386.410996
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A vertical rectangular street sign with a white background and black border.
+    The sign features black text at the top reading "ONE WAY" in all capital letters.
+    Below the text, there is a black arrow pointing to the right.
+  last_observed: 1673884389.112212
+  median_depth: 9.786499977111816
+  observations: 28
+  position_camera:
+  - -8.039602874489331
+  - -4.221512259544325
+  - 10.844392946788243
+  position_world:
+  - -62.19951490250093
+  - 109.39979392707089
+  - 0.23255330041701125
+  semantic_id: 17
+- centroid_pixel:
+  - 4
+  - 177
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884386.410996
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A tall, slender street light with a dark, cylindrical pole that tapers slightly
+    towards the top. The pole supports a single, large, rounded light fixture with
+    a slightly domed top.
+  last_observed: 1673884389.112212
+  median_depth: 7.2829999923706055
+  observations: 25
+  position_camera:
+  - -8.264758133448234
+  - -3.6462037631069593
+  - 10.924680004119873
+  position_world:
+  - -62.40786884115803
+  - 109.36037833617591
+  - -0.3552839186348146
+  semantic_id: 18
+- centroid_pixel:
+  - 611
+  - 254
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884385.610612
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A patch of terrain covered with dense, green grass interspersed with small,
+    scattered brown leaves.
+  last_observed: 1673884403.613766
+  median_depth: 4.7270002365112305
+  observations: 181
+  position_camera:
+  - 4.079330969210354
+  - -0.3378715088142692
+  - 6.166099469306061
+  position_world:
+  - -49.24006018997495
+  - 110.56080557183505
+  - -2.5391315020464056
+  semantic_id: 8
+- centroid_pixel:
+  - 513
+  - 33
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884388.311868
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: The street light features a cylindrical, frosted glass lamp housing with
+    a slightly tapered top. The housing is mounted on a dark, ornate metal pole with
+    intricate detailing.
+  last_observed: 1673884393.113164
+  median_depth: 5.700500011444092
+  observations: 18
+  position_camera:
+  - 3.92458258369844
+  - -4.477005452282431
+  - 7.758583360248142
+  position_world:
+  - -49.947622464861276
+  - 108.7897527207104
+  - 1.2941190753856224
+  semantic_id: 25
+- centroid_pixel:
+  - 555
+  - 250
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884389.712362
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A long, narrow, and straight concrete sidewalk with a smooth surface, running
+    parallel to a brick-paved area.
+  last_observed: 1673884403.613766
+  median_depth: 4.940000057220459
+  observations: 102
+  position_camera:
+  - 2.3405996117919927
+  - 0.12306380030651329
+  - 3.9667352975583543
+  position_world:
+  - -50.92602558502027
+  - 111.2697566551327
+  - -2.725558697922765
+  semantic_id: 29
+- centroid_pixel:
+  - 632
+  - 230
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884389.012184
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A dense, elongated bush with a slightly irregular shape, featuring a mix
+    of dark green and lighter green foliage. The bush has a somewhat uneven top edge
+    and appears to be well-maintained, with no visible flowers or fruits.
+  last_observed: 1673884404.013741
+  median_depth: 4.711999893188477
+  observations: 116
+  position_camera:
+  - 5.2307541040993035
+  - -1.4458296419146235
+  - 10.13275000555762
+  position_world:
+  - -47.596600805930834
+  - 117.32634721096443
+  - -1.9468425283385404
+  semantic_id: 28
+- centroid_pixel:
+  - 284
+  - 357
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884385.610612
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: The sidewalk is composed of interlocking rectangular bricks arranged in a
+    herringbone pattern. The bricks are light brown with a slightly rough texture.
+    There are two circular manhole covers embedded in the sidewalk, one near the center
+    and another towards the right side. The sidewalk extends into the distance, maintaining
+    the same herringbone pattern throughout.
+  last_observed: 1673884419.614403
+  median_depth: 1.8289999961853027
+  observations: 341
+  position_camera:
+  - -0.13665534890508588
+  - 0.4964559363642287
+  - 1.8952125045657158
+  position_world:
+  - -52.91415995503055
+  - 116.6273526394671
+  - -2.827233010084164
+  semantic_id: 1
+- centroid_pixel:
+  - 632
+  - 212
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884387.011324
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A tall, slender, dark-colored pole with a slightly wider base and a smooth
+    surface. The pole has a small, rectangular attachment near the top.
+  last_observed: 1673884395.313432
+  median_depth: 3.8369998931884766
+  observations: 81
+  position_camera:
+  - 3.913355664255672
+  - -2.621936971634597
+  - 7.386333347838602
+  position_world:
+  - -49.747394280030456
+  - 108.83192405224091
+  - -0.4908737556798679
+  semantic_id: 21
+- centroid_pixel:
+  - 623
+  - 158
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884388.111812
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A person with short, light-colored hair, wearing a red short-sleeved shirt
+    with a white rectangular patch on the chest, dark pants, and black shoes.
+  last_observed: 1673884394.513285
+  median_depth: 2.234999895095825
+  observations: 65
+  position_camera:
+  - 2.368524311355653
+  - -1.8023896249166336
+  - 9.511784619551438
+  position_world:
+  - -51.31306447684648
+  - 111.11636362148286
+  - -1.6673325620400796
+  semantic_id: 24
+- centroid_pixel:
+  - 74
+  - 468
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884388.411896
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: An oval-shaped manhole cover with a textured surface featuring concentric
+    circular patterns and small, evenly spaced holes.
+  last_observed: 1673884393.913194
+  median_depth: 1.0980000495910645
+  observations: 56
+  position_camera:
+  - -0.4614139918842714
+  - 0.2744467296321325
+  - 3.3596071366752898
+  position_world:
+  - -54.27038894702512
+  - 104.70987675054225
+  - -2.9192509490883682
+  semantic_id: 26
+- centroid_pixel:
+  - 622
+  - 452
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884390.112554
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: An elongated, oval-shaped manhole cover with a textured surface featuring
+    a pattern of raised, interlocking rectangles.
+  last_observed: 1673884395.813376
+  median_depth: 1.128999948501587
+  observations: 58
+  position_camera:
+  - 1.3249726902603494
+  - 0.22198048989024546
+  - 3.4951982744808854
+  position_world:
+  - -52.19846314748048
+  - 106.40191098262468
+  - -2.8232883974786063
+  semantic_id: 30
+- centroid_pixel:
+  - 631
+  - 99
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884391.012887
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A maroon short-sleeved t-shirt with a white rectangular graphic text "TEAM
+    SCIENCE" across the chest.
+  last_observed: 1673884394.513285
+  median_depth: 2.1589999198913574
+  observations: 36
+  position_camera:
+  - 2.0160672052125337
+  - -1.5232343800179164
+  - 6.158444397979313
+  position_world:
+  - -51.32536953564359
+  - 108.94205192823395
+  - -1.4441631688089185
+  semantic_id: 33
+- centroid_pixel:
+  - 626
+  - 244
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884390.91276
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: Dark-colored, slim-fit trousers with a smooth texture, extending down to
+    the ankles.
+  last_observed: 1673884394.513285
+  median_depth: 2.4570000171661377
+  observations: 35
+  position_camera:
+  - 2.0049431095461174
+  - -0.8104049757917248
+  - 6.128642851965768
+  position_world:
+  - -51.302130750661746
+  - 108.8420904094312
+  - -2.144851036120675
+  semantic_id: 32
+- centroid_pixel:
+  - 625
+  - 163
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884394.013281
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A dense, elongated bush with dark green foliage, featuring a slightly uneven
+    top edge and a consistent, lush appearance throughout.
+  last_observed: 1673884396.813383
+  median_depth: 19.81999969482422
+  observations: 29
+  position_camera:
+  - 14.077386033439872
+  - -4.419695712889666
+  - 19.356227354569867
+  position_world:
+  - -39.37018039665492
+  - 125.95802997979567
+  - 0.062309533029301006
+  semantic_id: 34
+- centroid_pixel:
+  - 7
+  - 121
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884387.7116
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A traditional-style lamppost with a fluted column design, featuring a tiered
+    base and a decorative capital with volutes. The post supports a single, ornate
+    lantern with a peaked roof and finial, finished in a dark color.
+  last_observed: 1673884399.813579
+  median_depth: 11.020000457763672
+  observations: 98
+  position_camera:
+  - -8.678209860551844
+  - -4.249831750596488
+  - 12.534117642570944
+  position_world:
+  - -61.631786642331825
+  - 122.20559698519251
+  - 0.08931070748709237
+  semantic_id: 23
+- centroid_pixel:
+  - 7
+  - 104
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884398.613536
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A red banner with a white triangular emblem in the center, featuring a stylized
+    white bird with outstretched wings above a white horizontal line.
+  last_observed: 1673884399.913588
+  median_depth: 11.038000106811523
+  observations: 14
+  position_camera:
+  - -8.378668489830858
+  - -4.313066586327751
+  - 11.69053568158831
+  position_world:
+  - -61.08335417845725
+  - 121.75913502176844
+  - 0.2892016086225068
+  semantic_id: 42
+- centroid_pixel:
+  - 521
+  - 189
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884399.713591
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: The railing is a metallic structure with a smooth, reflective surface. It
+    features a horizontal top rail and a vertical support post. The top rail is slightly
+    curved and has a consistent width throughout its visible length. The vertical
+    support post is straight and connects the top rail to the base of the railing.
+  last_observed: 1673884401.713761
+  median_depth: 10.279999732971191
+  observations: 21
+  position_camera:
+  - 5.432852430250243
+  - -1.8408602606442492
+  - 11.233404840741839
+  position_world:
+  - -46.20695686392329
+  - 120.68106577061073
+  - -1.6457167000217243
+  semantic_id: 45
+- centroid_pixel:
+  - 612
+  - 135
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884400.013675
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: The fence is composed of vertical wooden planks, each evenly spaced and painted
+    in a dark color. The top of the fence features a horizontal wooden beam that runs
+    parallel to the ground, providing structural support. The fence appears to be
+    well-maintained, with no visible damage or wear.
+  last_observed: 1673884401.01378
+  median_depth: 16.540000915527344
+  observations: 11
+  position_camera:
+  - 12.507301559208246
+  - -4.993741263773673
+  - 16.788818185979668
+  position_world:
+  - -38.327160185871755
+  - 125.16399844735993
+  - 0.9539379872038645
+  semantic_id: 47
+- centroid_pixel:
+  - 580
+  - 7
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884400.113684
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A red banner with a white emblem in the center, featuring a stylized design
+    that resembles a bird or a similar creature with outstretched wings.
+  last_observed: 1673884410.313944
+  median_depth: 4.7170000076293945
+  observations: 100
+  position_camera:
+  - 3.5442176585403242
+  - -4.043765641561416
+  - 8.934549965858459
+  position_world:
+  - -48.890925659740745
+  - 123.69212132206205
+  - 0.8290843990507903
+  semantic_id: 48
+- centroid_pixel:
+  - 168
+  - 181
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884400.41367
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A traditional-style lamppost with a fluted column, featuring a single lantern
+    with a domed top and a finial. The lantern has a clear glass enclosure and is
+    mounted on a curved arm extending from the column.
+  last_observed: 1673884405.513731
+  median_depth: 33.59300231933594
+  observations: 30
+  position_camera:
+  - -9.80708594631408
+  - -4.8421543607161315
+  - 17.609946625573293
+  position_world:
+  - -61.31950193346882
+  - 130.9428676053844
+  - 0.023076003942370065
+  semantic_id: 49
+- centroid_pixel:
+  - 592
+  - 11
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884403.413808
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: The street light features a rounded, bulbous glass cover with a smooth, reflective
+    surface. The top of the light has a slightly protruding, rounded cap that appears
+    to be made of a metallic material. The glass cover is encased in a dark, sturdy
+    frame that supports the light fixture.
+  last_observed: 1673884405.7137291
+  median_depth: 7.922999858856201
+  observations: 24
+  position_camera:
+  - 5.480320529979211
+  - -5.285141004797981
+  - 8.995208323001862
+  position_world:
+  - -48.49788663251294
+  - 123.8043855567526
+  - 2.107850107875313
+  semantic_id: 54
+- centroid_pixel:
+  - 5
+  - 82
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884403.813704
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A vertical red banner with a white silhouette of a bird in flight centered
+    on it.
+  last_observed: 1673884404.513685
+  median_depth: 8.845999717712402
+  observations: 8
+  position_camera:
+  - -7.593577064883212
+  - -3.98759140752942
+  - 9.164124965667725
+  position_world:
+  - -61.53897072916744
+  - 122.41059282620031
+  - 0.3864623903956626
+  semantic_id: 57
+- centroid_pixel:
+  - 627
+  - 225
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884403.813704
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A concrete wall with a smooth surface, featuring a vertical seam and a horizontal
+    ledge near the top. The wall has a slightly weathered appearance with subtle discoloration.
+  last_observed: 1673884404.613674
+  median_depth: 6.788000106811523
+  observations: 9
+  position_camera:
+  - 5.4116581694459
+  - -0.5402724482756747
+  - 7.117222203148736
+  position_world:
+  - -48.29024439410952
+  - 121.00408535785401
+  - -2.3358281719416674
+  semantic_id: 59
+- centroid_pixel:
+  - 12
+  - 299
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884403.813704
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: An elongated, oval-shaped manhole cover with a textured surface and a slightly
+    raised, beveled edge.
+  last_observed: 1673884407.113848
+  median_depth: 2.8610000610351562
+  observations: 33
+  position_camera:
+  - -2.000332274868919
+  - 0.12190891341501385
+  - 4.389333313161677
+  position_world:
+  - -55.38655760196712
+  - 118.93500195131882
+  - -2.866982396423183
+  semantic_id: 58
+- centroid_pixel:
+  - 67
+  - 249
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884401.713761
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A long, narrow, dark gray strip with a slightly rough texture, running diagonally
+    from the bottom left to the top right.
+  last_observed: 1673884419.614403
+  median_depth: 5.824999809265137
+  observations: 180
+  position_camera:
+  - -3.0827719116748487
+  - -0.1128533412111125
+  - 5.985412118823957
+  position_world:
+  - -54.889396802216424
+  - 128.5649762783294
+  - -2.817807342425824
+  semantic_id: 52
+- centroid_pixel:
+  - 630
+  - 244
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884405.113737
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A dense, elongated bush with a mix of dark green and lighter green foliage.
+    The bush has a somewhat irregular shape, with the top part being slightly higher
+    than the bottom. The leaves are small and closely packed, giving the bush a lush
+    and full appearance.
+  last_observed: 1673884410.813829
+  median_depth: 3.512500047683716
+  observations: 58
+  position_camera:
+  - 3.669792869498408
+  - -0.4187586641235526
+  - 5.312551703946344
+  position_world:
+  - -48.98947113286368
+  - 121.91604753438973
+  - -2.2655539475887307
+  semantic_id: 62
+- centroid_pixel:
+  - 631
+  - 235
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884406.813764
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A rectangular, metallic trash can with a flat top and a slightly textured
+    surface. The trash can has a smooth, light gray finish and appears to be made
+    of stainless steel. The top edge is straight and even, and the sides are smooth
+    with no visible handles or openings.
+  last_observed: 1673884408.013945
+  median_depth: 4.877999782562256
+  observations: 13
+  position_camera:
+  - 4.0626291946884585
+  - -0.27649942964925267
+  - 5.28330766237699
+  position_world:
+  - -48.42248138225198
+  - 121.05389551930794
+  - -2.3905385799109533
+  semantic_id: 67
+- centroid_pixel:
+  - 4
+  - 184
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884406.813764
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A tall, slender street light with a dark, cylindrical pole that tapers slightly
+    towards the top. The pole supports a single, rounded, dome-shaped light fixture
+    at the top.
+  last_observed: 1673884408.413939
+  median_depth: 11.191499710083008
+  observations: 17
+  position_camera:
+  - -9.461647831759059
+  - -3.666419582572886
+  - 11.987147050745348
+  position_world:
+  - -60.78489739808883
+  - 130.24463596885357
+  - -0.2903747064316843
+  semantic_id: 68
+- centroid_pixel:
+  - 7
+  - 112
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884407.01384
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A rectangular signboard with a white background and a green border. The top
+    section features a green logo on the left and a green text block on the right.
+    Below, there is a larger green text block with white text, followed by a smaller
+    green text block with white text. The bottom section of the signboard has a green
+    background with white text.
+  last_observed: 1673884408.513948
+  median_depth: 11.005499839782715
+  observations: 14
+  position_camera:
+  - -9.107400977369007
+  - -4.206847002782839
+  - 11.66728585106986
+  position_world:
+  - -60.41177622187862
+  - 130.06723965100454
+  - 0.31557907103269034
+  semantic_id: 69
+- centroid_pixel:
+  - 634
+  - 208
+  clip_feature_dim: 1024
+  filter_reason: Filtered by Hydra
+  first_observed: 1673884401.113769
+  has_clip_feature: true
+  has_embedding: false
+  in_hydra: false
+  label: A tall, slender, dark-colored pole with a slightly tapered top and a smooth
+    surface.
+  last_observed: 1673884411.213883
+  median_depth: 4.086999893188477
+  observations: 99
+  position_camera:
+  - 3.901010017007534
+  - -3.2164028502368227
+  - 8.337050500542226
+  position_world:
+  - -48.56682846335474
+  - 123.67783626061622
+  - 0.10821549433743455
+  semantic_id: 51
+total_background_objects: 33
+total_filtered: 33
+total_in_hydra: 0

@@ -1,0 +1,81 @@
+dataset:
+  camera_id: cam0
+  compute_velocities: true
+  data_path: null
+  dataset_type: null
+  depth_scale: 1.0
+  depth_source: 3d_raw_estimated
+  fps: 30.0
+  max_frames: null
+  sequence: '0'
+  velocity_alpha: 0.4
+  velocity_window: 10
+depth:
+  depth_lb: 0.05
+  depth_ub: 20.0
+grounding:
+  agent_model_name: gpt-4.1
+  clip_feature_interval_frames: 5
+  cuda_device: null
+  enable_perframe_clip_features: false
+  group_prompt_file: config/prompt_templates/grounded_sam_prompt.txt
+  perframe_clip_model_dataset: openai
+  perframe_clip_model_name: ViT-B-16
+  query_interval_frames: 120
+  sentence_embedding_model: ''
+hierarchical_optimization: true
+hydra:
+  enable_hydra: false
+  glog_level: 0
+  hydra_config_path: daaam/daaam_ros/config/hydra_config/clio_dataset_khronos.yaml
+  labelspace_colors: config/labels_pseudo.csv
+  labelspace_path: config/labels_pseudo.yaml
+  verbosity: 0
+  zmq_url: tcp://127.0.0.1:8001
+labelspace_colors_path: /workspace/ros2_ws/install/daaam_ros/share/daaam_ros/config/labels_pseudo.csv
+output_dir: output/coda
+segmentation:
+  device: cuda
+  imgsz:
+  - 480
+  - 640
+  max_mask_region_area: 307200
+  min_mask_region_area: 400
+  model_config_path: fastsam/fastsam_config.yaml
+  model_name: fastsam/FastSAM-x.pt
+  polygon_epsilon_factor: 0.001
+semantic_config_path: /workspace/ros2_ws/install/daaam_ros/share/daaam_ros/config/labels_pseudo.yaml
+tracking:
+  device: cuda
+  enable_temporal_history: true
+  reid_half: false
+  reid_weights: checkpoints/reid_weights/clip_general.engine
+  track_buffer: 30
+  with_reid: false
+workers:
+  assignment_config:
+    N_masks_per_batch: 64
+    max_mask_region_area: 307200
+    min_frame_margin_slack: 1
+    min_mask_region_area: 400
+    min_obs_per_track: 8
+    position_score_weight: 0.5
+    size_score_weight: 0.5
+  assignment_worker: min_frames_max_size
+  dam_grounding_config:
+    compute_full_image_description: true
+    dam_conv_mode: v1
+    dam_model_path: nvidia/DAM-3B
+    dam_prompt_mode: focal_prompt
+    enable_selectframe_clip_features: true
+    multi_image_min_n_masks: 32
+    save_grounding_images: true
+    save_object_images: true
+    save_plain_grounding_images: true
+    selectframe_clip_backend: pe
+    selectframe_clip_model_dataset: openai
+    selectframe_clip_model_name: PE-Core-L14-336
+    sentence_embedding_model_name: ''
+  grounding_worker: dam_multi_image
+  num_assignment_workers: 1
+  num_grounding_workers: 1
