@@ -1,53 +1,54 @@
-# DAAAM Reproduction — Test Assignment
+# DAAAM Reproduction — CODa Dataset
 
-Reproducing the DAAAM (Describe Anything, Anywhere, at Any Moment) pipeline on a
-motion-verified subset of the CODa dataset, via the official ROS 2 Jazzy + DAAAM-ROS workflow.
+Reproduction of the DAAAM (Describe Anything, Anywhere, at Any Moment) pipeline on a
+400-frame subset of CODa sequence 0, using the official ROS 2 Jazzy + DAAAM-ROS
+workflow. Full write-up: **[FILL IN: Google Doc link]**.
 
-**Full report (Google Doc):** [FILL IN link]
+## Status
 
-## Environment
+Pipeline runs end-to-end: depth estimation, segmentation, tracking, assignment, DAM
+grounding, and dense semantically-labeled mesh reconstruction all confirmed working.
+**Known limitation:** the DSG `OBJECTS` layer is empty in every run — root-caused to a
+likely version mismatch between the checked-out Hydra/Khronos config and the built
+Hydra source, not fully resolved. Full detail in the report, Task 1.9 and 1.10.
 
-| Component | Value |
-|---|---|
-| Provider | RunPod, RTX 4090 (24GB VRAM) |
-| OS | Ubuntu 24.04 |
-| CUDA / PyTorch | 12.8.1 / 2.8.0 |
-| ROS 2 | Jazzy |
-| DAAAM commit | `[FILL IN]` |
-| DAAAM-ROS commit | `[FILL IN]` |
-| Hydra / Spark-DSG commit | `[FILL IN]` |
-| FoundationStereo fork | [nicogorlo/FoundationStereo](https://github.com/nicogorlo/FoundationStereo), commit `[FILL IN]` |
+## Prerequisites
 
-Full dependency list: `requirements-frozen.txt`, `environment-coda.yml`.
+- NVIDIA GPU, 24GB+ VRAM, CUDA 12.x
+- Ubuntu 24.04, ROS 2 Jazzy
+- ~30GB free disk for the workspace/build (container disk, separate from dataset
+  storage)
 
-## Setup
+## Quick setup (fresh machine/pod)
 
 ```bash
-# 1. After every fresh pod boot — reinstalls ROS 2/rosdep/colcon/conda-init/git-config,
-#    all of which live on the ephemeral container disk, not the persistent volume
-bash scripts/post_boot_setup.sh
+mkdir -p /workspace/ros2_ws/src && cd /workspace/ros2_ws/src
+git clone https://github.com/MIT-SPARK/DAAAM.git daaam
+bash daaam/install/install.sh   # patched to skip semantic_inference — see patches/
 
-# 2. Build the DAAAM ROS 2 workspace (see main repo's install.sh)
-# 3. Apply the open3d patch before running FoundationStereo
-python scripts/patch_open3d_ml_import.py
+git clone <this-repo-url> daaam-reproduction
+bash daaam-reproduction/scripts/full_reinit.sh
 ```
+`full_reinit.sh` is idempotent — safe to re-run after any environment reset (e.g. a
+cloud pod migration/restart wipes everything outside a persistent volume).
 
-## Data
+## Apply this repo's code patches
 
-CODa sequence 0, frames **2000–2399** (400 frames, ~40s at 10Hz). Range chosen after
-inspecting the pose trajectory — this window shows sustained, consistent motion
-(~9m/100 frames), avoiding a near-stationary segment later in the sequence. Full
-rationale and evidence in the report, section 4.
-
+The following patches must be applied to the upstream `daaam_ros`/`daaam` clones
+(not part of `full_reinit.sh`, since they modify vendored source, not dependencies):
 ```bash
-scripts/prepare_coda_subset.sh   # extracts the above range from a full CODa download
+cd /workspace/ros2_ws/src/daaam_ros
+git apply /path/to/daaam-reproduction/patches/daaam_ros_fixes_20260807.diff
+git apply /path/to/daaam-reproduction/patches/daaam_ros_semantic_integrator_fix.diff
 ```
+See each `.diff` file's accompanying note in the report (Task 1.8) for what it fixes
+and why.
 
-## Running
+## Data preparation (smoke test)
 
-**Depth estimation:**
+Prepare a small subset first to validate the install quickly:
 ```bash
-cd FoundationStereo
+python scripts/download_split.py -d ./data -t sequence -se 0
 python scripts/run_coda_depth_estimation.py \
   --dataset_folder /workspace/CODa_subset \
   --sequence_id 0 \
@@ -55,26 +56,46 @@ python scripts/run_coda_depth_estimation.py \
   --save_format png
 ```
 
-**Bag creation + run:** `[FILL IN once finalized]`
+## Run — smoke test (short, for fast iteration)
 
-**Smoke test** (short range, fast iteration): `[FILL IN]`
-**Full run:** `[FILL IN]`
+```bash
+source /opt/ros/jazzy/setup.bash
+source /workspace/ros2_ws/install/setup.bash
+cd /workspace/ros2_ws
+ros2 launch daaam_ros coda_daaam_hydra.launch.yaml \
+  scene:=coda_0_subset sam_model:=fastsam/FastSAM-x.pt --max-frames 50
+```
+(In a second terminal: `ros2 bag play <bag_path> --qos-profile-overrides-path
+~/.tf_overrides.yaml < /dev/null` — see `patches/` for the required `.tf_overrides.yaml`
+content, without which playback hangs on a known `rosbag2` QoS bug.)
+
+## Run — full run (used for this reproduction's results)
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source /workspace/ros2_ws/install/setup.bash
+cd /workspace/ros2_ws
+ros2 launch daaam_ros coda_daaam_hydra.launch.yaml \
+  scene:=coda_0_subset sam_model:=fastsam/FastSAM-x.pt \
+  2>&1 | tee launch_run_$(date +%Y%m%d_%H%M%S).log
+```
+Full 400-frame CODa subset (sequence 0, frames 2000-2399), bag playback in a second
+terminal as above. Expect ~1-2 minutes wall-clock for 400 frames.
+
+## Repository structure
+
+```
+scripts/full_reinit.sh          — full environment recovery/setup, idempotent
+patches/                        — upstream code changes, one .diff per fix, documented
+results/section3_diagrams/      — model/module architecture & logic diagrams + analysis
+results/viz_samples/            — per-stage input/output visualization examples
+results/run_*/                  — output artifacts from confirmed runs (dsg.json, etc.)
+requirements-frozen.txt         — pinned Python dependency versions
+environment-coda.yml            — conda environment file
+```
 
 ## Troubleshooting
 
-Full details with root-cause analysis in the report (section 8). Highlights:
-- ROS 2 apt repo, `rosdep`, and `colcon` all live on the pod's ephemeral container
-  disk and must be reinstalled after every restart — see `scripts/post_boot_setup.sh`.
-- `spark_dsg` and `daaam_ros` both required re-cloning due to incomplete initial clones.
-- `open3d` unconditionally imports an unrelated ML-benchmark submodule at load time —
-  patched via `scripts/patch_open3d_ml_import.py`.
-- FoundationStereo's `requirements.txt` is missing several transitive dependencies
-  (`tqdm`, `natsort`, `pandas`, `open3d`'s own extras); installed as surfaced.
-
-## Repository contents
-
-- `scripts/prepare_coda_subset.sh` — CODa subset extraction
-- `scripts/patch_open3d_ml_import.py` — open3d import fix
-- `scripts/post_boot_setup.sh` — pod environment reinit
-- `logs/` — full install/setup logs
-- `requirements-frozen.txt`, `environment-coda.yml` — dependency lock files
+See the report's error table (Task 1.8) for 27 documented issues encountered and
+fixed, each with root cause and confirmation method. Most common: after any
+environment reset, re-run `full_reinit.sh` before attempting to launch.
