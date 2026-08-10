@@ -2,7 +2,7 @@
 
 Reproduction of the DAAAM (Describe Anything, Anywhere, at Any Moment) pipeline on a
 400-frame subset of CODa sequence 0, using the official ROS 2 Jazzy + DAAAM-ROS
-workflow. Full write-up: **[FILL IN: Google Doc link]**.
+workflow. Full write-up: **https://docs.google.com/document/d/1aY1fZZK60wYN0RRbI_gNk5RghVUDT0m2Kb66nqR-hBs/edit?usp=sharing**.
 
 ## Status
 
