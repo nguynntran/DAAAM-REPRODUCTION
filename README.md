@@ -16,7 +16,7 @@ Hydra source, not fully resolved. Full detail in the report, Task 1.9 and 1.10.
 
 - NVIDIA GPU, 24GB+ VRAM, CUDA 12.x
 - Ubuntu 24.04, ROS 2 Jazzy
-- ~30GB free disk for the workspace/build (container disk, separate from dataset
+- ~250GB free disk for the workspace/build (container disk, separate from dataset
   storage)
 
 ## Quick setup (fresh machine/pod)
