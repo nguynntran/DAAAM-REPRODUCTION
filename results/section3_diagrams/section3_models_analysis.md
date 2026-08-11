@@ -228,3 +228,10 @@ ReID.
 | Which CLIP variant this project's tracker would use | Not confirmed — no checkpoint to check |
 | Whether camera-motion compensation is active in tracking | **Confirmed** — `use_cmc=True, cmc_method=ecc` in the startup log |
 | Sentence embeddings / chat agent not yet used in the main pipeline run | Confirmed from config |
+
+## DSG screenshot files (note: committed separately)
+
+The actual DSG screenshots (`dsg_clean.png`, `dsg_des.png`) are committed at
+`results/section3_diagrams/` alongside the Section 3 architecture diagrams, not in
+this folder — see that directory directly, or the report's Task 4 table
+("Scene graph" / "Final result" rows).
