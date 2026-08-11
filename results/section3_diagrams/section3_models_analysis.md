@@ -169,13 +169,20 @@ the code and logs; *why* the second one fails is still an open question, not
 something we've fully solved yet.
 
 **What a working example looks like (for reference):** the two DSG example images
-(`dsg_clean.png`, `dsg_des.png`) are confirmed screenshots from this project's own
-Rerun viewer session, from an actual run in this reproduction. `dsg_clean.png` shows
-the raw reconstructed mesh outline (trees, road, sidewalk clearly separated), matching
-the confirmed-working mesh reconstruction. `dsg_des.png` shows the same kind of scene
-with text descriptions attached — this specifically shows the **`BACKGROUND_OBJECTS`
-layer** (node-ID prefix `'o'`, 33 nodes, decoded from the DSG's packed 64-bit IDs), not
-the empty `OBJECTS` layer, which has no nodes to screenshot.
+below are confirmed screenshots from this project's own Rerun viewer session, from an
+actual run in this reproduction.
+
+![DSG clean mesh reconstruction](dsg_clean.png)
+
+`dsg_clean.png` shows the raw reconstructed mesh outline (trees, road, sidewalk
+clearly separated), matching the confirmed-working mesh reconstruction.
+
+![DSG with attached object descriptions](dsg_des.png)
+
+`dsg_des.png` shows the same kind of scene with text descriptions attached — this
+specifically shows the **`BACKGROUND_OBJECTS` layer** (node-ID prefix `'o'`, 33 nodes,
+decoded from the DSG's packed 64-bit IDs), not the empty `OBJECTS` layer, which has no
+nodes to screenshot.
 
 ---
 
@@ -229,9 +236,3 @@ ReID.
 | Whether camera-motion compensation is active in tracking | **Confirmed** — `use_cmc=True, cmc_method=ecc` in the startup log |
 | Sentence embeddings / chat agent not yet used in the main pipeline run | Confirmed from config |
 
-## DSG screenshot files (note: committed separately)
-
-The actual DSG screenshots (`dsg_clean.png`, `dsg_des.png`) are committed at
-`results/section3_diagrams/` alongside the Section 3 architecture diagrams, not in
-this folder — see that directory directly, or the report's Task 4 table
-("Scene graph" / "Final result" rows).
