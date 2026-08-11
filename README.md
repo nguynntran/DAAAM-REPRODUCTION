@@ -99,3 +99,13 @@ environment-coda.yml            — conda environment file
 See the report's error table (Task 1.8) for 27 documented issues encountered and
 fixed, each with root cause and confirmation method. Most common: after any
 environment reset, re-run `full_reinit.sh` before attempting to launch.
+
+## Note on `requirements-frozen.txt`
+
+This file reflects the environment as of the initial working setup (2026-08-07).
+Several additional pip packages were installed during later debugging sessions
+(fully documented in the report's Task 1.8 error table, rows 14-23) but not
+re-frozen into this file due to time constraints on a subsequent GPU-less pod
+before submission. `scripts/full_reinit.sh` is the authoritative, complete, and
+tested source of truth for every dependency needed — use it rather than this file
+if reproducing from scratch.
