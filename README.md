@@ -71,6 +71,7 @@ content, without which playback hangs on a known `rosbag2` QoS bug.)
 
 ## Run — full run (used for this reproduction's results)
 
+Terminal 1:
 ```bash
 source /opt/ros/jazzy/setup.bash
 source /workspace/ros2_ws/install/setup.bash
@@ -79,8 +80,21 @@ ros2 launch daaam_ros coda_daaam_hydra.launch.yaml \
   scene:=coda_0_subset sam_model:=fastsam/FastSAM-x.pt \
   2>&1 | tee launch_run_$(date +%Y%m%d_%H%M%S).log
 ```
-Full 400-frame CODa subset (sequence 0, frames 2000-2399), bag playback in a second
-terminal as above. Expect ~1-2 minutes wall-clock for 400 frames.
+
+Terminal 2 (start once Terminal 1 logs `Waiting for CameraInfo` / `Waiting for
+sensor extrinsics`):
+```bash
+source /opt/ros/jazzy/setup.bash
+cd /workspace/ros2_ws
+ros2 bag play /workspace/CODa_subset/coda_0_subset_<timestamp> \
+  --qos-profile-overrides-path ~/.tf_overrides.yaml \
+  < /dev/null
+```
+Without `--qos-profile-overrides-path`, playback hangs indefinitely — see Task 1.8,
+row 21 of the report for the root cause (a known `rosbag2` QoS-recording bug).
+
+Full 400-frame CODa subset (sequence 0, frames 2000-2399). Expect ~1-2 minutes
+wall-clock for 400 frames.
 
 ## Repository structure
 
@@ -109,3 +123,17 @@ re-frozen into this file due to time constraints on a subsequent GPU-less pod
 before submission. `scripts/full_reinit.sh` is the authoritative, complete, and
 tested source of truth for every dependency needed — use it rather than this file
 if reproducing from scratch.
+
+## Note on `*_masks_only_*.png` files
+
+The `grounding_images_masks_only_*.png` files are 16-bit grayscale, where each
+pixel's value is the `semantic_id` of the mask it belongs to (0 = background).
+Since these values only range 0–18 against a 16-bit scale (0–65535), the files
+will appear almost entirely black in standard image viewers, including GitHub's
+preview — **this is expected, not a corrupted file**.
+
+- To inspect the raw values or generate a colorized view yourself: `results/viz_samples/check_mask.py`
+  (loads the file, prints the unique pixel values, saves a colorized PNG via matplotlib).
+- For a human-readable version with masks already overlaid on the real RGB frame
+  and labeled by `semantic_id`, use `grounding_images_grounding_*.jpg` instead —
+  this is what's referenced in the report's Task 4 visualization section.
